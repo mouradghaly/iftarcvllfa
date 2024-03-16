@@ -35,7 +35,7 @@ def registration(request):
             p.save()
             return HttpResponse("OK")
     else:
-        return render(request,"registration.html", {
+        return render(request,"/templates/registration.html", {
             "form": reg
         })
 
