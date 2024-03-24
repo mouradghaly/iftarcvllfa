@@ -59,37 +59,49 @@
         const seconde = document.getElementById("seconde");
         const première = document.getElementById("première");
         const terminale = document.getElementById("terminale");
+        const professeurs = document.getElementById("professeurs");
 
         document.getElementById("3ème").style.display = 'none';
         document.getElementById("Seconde").style.display = 'none';
         document.getElementById("1ère").style.display = 'none';
         document.getElementById("Terminale").style.display = 'none';
+        document.getElementById("Professeurs").style.display = 'none';
 
         troisième.addEventListener('click', function(){
             document.getElementById("3ème").style.display = 'block';
-
             document.getElementById("Seconde").style.display = 'none';
             document.getElementById("1ère").style.display = 'none';
             document.getElementById("Terminale").style.display = 'none';
+            document.getElementById("Professeurs").style.display = 'none';
         });
 
         seconde.addEventListener('click', function(){
             document.getElementById('Seconde').style.display = 'block';
-
             document.getElementById("3ème").style.display = 'none';
             document.getElementById("1ère").style.display = 'none';
             document.getElementById("Terminale").style.display = 'none';
+            document.getElementById("Professeurs").style.display = 'none';
         });
 
         première.addEventListener('click', function(){
             document.getElementById('1ère').style.display = 'block';
             document.getElementById('Seconde').style.display = 'none';
-            document.getElementById("Terminale").style.display = 'none';
             document.getElementById("3ème").style.display = 'none';
+            document.getElementById("Terminale").style.display = 'none';
+            document.getElementById("Professeurs").style.display = 'none';
         });
 
         terminale.addEventListener('click', function(){
             document.getElementById('Terminale').style.display = 'block';
+            document.getElementById('1ère').style.display = 'none';
+            document.getElementById('Seconde').style.display = 'none';
+            document.getElementById("3ème").style.display = 'none';
+            document.getElementById("Professeurs").style.display = 'none';
+        });
+
+        professeurs.addEventListener('click', function(){
+            document.getElementById('Professeurs').style.display = 'block';
+            document.getElementById('Terminale').style.display = 'none';
             document.getElementById('1ère').style.display = 'none';
             document.getElementById('Seconde').style.display = 'none';
             document.getElementById("3ème").style.display = 'none';
@@ -137,9 +149,21 @@
             {% endfor %}
         </ol>   
     </section>
+
+    <section id="Professeurs">
+        <ol>
+            {% for person in my_model %}
+                {% if person.classe == "Professeur" %}
+                    <li>{{ person.name }} {{person.lastname}} {{ person.email }}</li>
+                {% endif %}
+            {% endfor %}
+        </ol>   
+    </section>
     <button id="troisième">3ème</button>
     <button id="seconde">Seconde</button>
     <button id="première">1ère</button>
     <button id="terminale">Terminale</button>
+    <button id="professeurs">Professeurs</button>
 </body>
 </html>
+
