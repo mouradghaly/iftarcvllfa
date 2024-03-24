@@ -46,15 +46,33 @@
             cursor: pointer;
         }
         
+        .logo {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+        }
+        
         /* CSS for form container on mobile devices */
         @media screen and (max-width: 600px) {
             .form-container {
                 width: 90%;
             }
         }
+        
+        /* CSS for footer */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
+    <img class="logo" src="Screenshot 2023-10-21 at 6.20.46 PM.png">
     <header>
         <h1>Inscription Iftar Ramadan CVL</h1>
     </header>
@@ -65,5 +83,9 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+    <footer>
+        Plateforme conçue et développée par Mourad Ghaly
+    </footer>
 </body>
 </html>
+
